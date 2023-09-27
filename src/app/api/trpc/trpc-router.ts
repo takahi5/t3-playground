@@ -1,5 +1,8 @@
 import { initTRPC } from "@trpc/server";
 import superjson from "superjson";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 const t = initTRPC.create({
   transformer: superjson,
@@ -8,6 +11,9 @@ const t = initTRPC.create({
 export const appRouter = t.router({
   getUsers: t.procedure.query(({ ctx }) => {
     return userList;
+  }),
+  getNotes: t.procedure.query(({ ctx }) => {
+    return prisma.notes.findMany();
   }),
 });
 
