@@ -3,7 +3,7 @@
 import { trpc } from "@/utils/trpc";
 import React from "react";
 
-export default function ListUsers() {
+export default function UsersContainer() {
   let { data: users, isLoading, isFetching } = trpc.getUsers.useQuery();
 
   if (isLoading || isFetching) {
