@@ -3,10 +3,10 @@
 import React from "react";
 import { NotificationList } from "./NotificationList";
 
-export default function MypageContainer() {
+export const Mypage = () => {
   return (
     <div className="">
       <NotificationList />
     </div>
   );
-}
+};
