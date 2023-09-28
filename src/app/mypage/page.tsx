@@ -1,4 +1,4 @@
-import { Mypage } from "@/client/ui/pages/mypage";
+import Mypage from "@/client/ui/pages/mypage";
 
 export default function Home() {
   return (

@@ -3,13 +3,13 @@ import { trpc } from "@/utils/trpc";
 import dayjs from "dayjs";
 import { Notification } from "@prisma/client";
 
-type Props = {
-  notifications: Notification[];
-};
+export default function NotificationList() {
+  let {
+    data: notifications,
+    isLoading,
+    isFetching,
+  } = trpc.getNotifications.useQuery();
 
-export const NotificationListPresentation: React.FC<Props> = ({
-  notifications,
-}) => {
   return (
     <div className="border-2 border-gray-300 p-4">
       <table className="table-auto text-sm">
@@ -26,4 +26,4 @@ export const NotificationListPresentation: React.FC<Props> = ({
       </table>
     </div>
   );
-};
+}
