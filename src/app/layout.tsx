@@ -1,3 +1,4 @@
+import "./globals.css";
 import { TrpcProvider } from "@/utils/trpc-provider";
 
 export const metadata = {

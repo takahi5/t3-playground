@@ -12,8 +12,8 @@ export const appRouter = t.router({
   getUsers: t.procedure.query(({ ctx }) => {
     return userList;
   }),
-  getNotes: t.procedure.query(({ ctx }) => {
-    return prisma.notes.findMany()npx prisma studio;
+  getNotifications: t.procedure.query(({ ctx }) => {
+    return prisma.notifications.findMany();
   }),
 });
 
