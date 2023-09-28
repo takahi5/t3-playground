@@ -13,7 +13,7 @@ export const appRouter = t.router({
     return userList;
   }),
   getNotifications: t.procedure.query(({ ctx }) => {
-    return prisma.notifications.findMany();
+    return prisma.notification.findMany();
   }),
 });
 

@@ -1,7 +1,7 @@
 import { PrismaClient, Prisma } from "@prisma/client";
 const prisma = new PrismaClient();
 
-const notificationSeeds: Prisma.notificationsCreateInput[] = [
+const notificationSeeds: Prisma.NotificationCreateInput[] = [
   {
     text: "エチオピア：MOPLACのオファーが開始しました",
     createdAt: new Date(2023, 8, 1),
@@ -23,7 +23,7 @@ const notificationSeeds: Prisma.notificationsCreateInput[] = [
 async function main() {
   const notifications = [];
   for (const notificationSeed of notificationSeeds) {
-    const notification = prisma.notifications.create({
+    const notification = prisma.notification.create({
       data: notificationSeed,
     });
     notifications.push(notification);
