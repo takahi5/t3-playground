@@ -10,8 +10,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model notes {
-  id        Int      @id @default(autoincrement())
-  content   String
+model notifications {
+  id          Int    @id @default(autoincrement())
+  text        String
   createdAt DateTime @default(now())
 }

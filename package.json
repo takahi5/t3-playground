@@ -8,6 +8,9 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
   "dependencies": {
     "@prisma/client": "^5.3.1",
     "@tanstack/react-query": "^4.35.3",
@@ -19,7 +22,8 @@
     "prisma": "^5.3.1",
     "react": "latest",
     "react-dom": "latest",
-    "superjson": "^1.13.3"
+    "superjson": "^1.13.3",
+    "ts-node": "^10.9.1"
   },
   "devDependencies": {
     "@types/node": "latest",

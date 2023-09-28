@@ -13,7 +13,7 @@ export const appRouter = t.router({
     return userList;
   }),
   getNotes: t.procedure.query(({ ctx }) => {
-    return prisma.notes.findMany();
+    return prisma.notes.findMany()npx prisma studio;
   }),
 });
 
