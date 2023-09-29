@@ -10,6 +10,30 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id          Int    @id @default(autoincrement())
+  name        String
+  avatarUrl   String
+  createdAt DateTime @default(now())
+}
+
+// enum DeliveryStatus {
+//   PACKING
+//   LOADING
+//   SHIPPING
+//   CUSTOM_CHECK
+//   WAREHOUSE
+//   DELIVERED
+// }
+
+model Order {
+  id             Int    @id @default(autoincrement())
+  buyerUserId    Int 
+  sellerUserId   Int
+  deliveryStatus Int // sqliteがenum非対応 
+  createdAt      DateTime @default(now())
+}
+
 model Notification {
   id          Int    @id @default(autoincrement())
   text        String

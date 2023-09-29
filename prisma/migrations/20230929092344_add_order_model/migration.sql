@@ -1,0 +1,8 @@
+-- CreateTable
+CREATE TABLE "Order" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "buyerUserId" INTEGER NOT NULL,
+    "sellerUserId" INTEGER NOT NULL,
+    "deliveryStatus" INTEGER NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
