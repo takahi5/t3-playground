@@ -15,6 +15,10 @@ model User {
   name        String
   avatarUrl   String
   createdAt DateTime @default(now())
+  
+  // Orderモデルとのリレーションを定義
+  ordersAsBuyer  Order[]  @relation("Buyer")
+  ordersAsSeller Order[]  @relation("Seller")
 }
 
 // enum DeliveryStatus {
@@ -32,6 +36,9 @@ model Order {
   sellerUserId   Int
   deliveryStatus Int // sqliteがenum非対応 
   createdAt      DateTime @default(now())
+
+  buyer       User     @relation("Buyer", fields: [buyerUserId], references: [id])
+  seller      User     @relation("Seller", fields: [sellerUserId], references: [id])
 }
 
 model Notification {
